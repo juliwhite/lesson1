@@ -1,0 +1,23 @@
+{
+    "contact1": {
+         "firstName": "Ernesto",
+         "lastName": "Vergara",
+         "email": "ernestovergara@example.com",
+         "favoriteColor": "Blue",
+         "birthday": "1990-05-15"
+       },
+       "contact2": {
+         "firstName": "Luciano",
+         "lastName": "Vergara",
+         "email": "lucianovergara@example.com",
+         "favoriteColor": "Green",
+         "birthday": "1988-07-23"
+       },
+       "contact3": {
+         "firstName": "Melody",
+         "lastName": "Vergara",
+         "email": "melodyvergara@example.com",
+         "favoriteColor": "Red",
+         "birthday": "1995-11-05"
+       }
+ }

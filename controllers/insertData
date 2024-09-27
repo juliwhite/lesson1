@@ -1,0 +1,30 @@
+// Select the database to use.
+use('test');
+
+// Insert a few documents into the contacts collection.
+db.contacts.insertMany([
+    {
+        firstName: 'Ernesto', 
+        lastName: 'Vergara', 
+        email: 'ernestovergara@example.com', 
+        favoriteColor: 'Blue', 
+        birthday: '1990-08-11'
+    },
+    {
+        firstName: 'Luciano', 
+        lastName: 'Vergara', 
+        email: 'lucianovergara@example.com', 
+        favoriteColor: 'Green', 
+        birthday: '20012-08-11'
+    },
+    {
+        firstName: 'Melody', 
+        lastName: 'Vergara', 
+        email: 'melodyvergara@example.com', 
+        favoriteColor: 'pink', 
+        birthday: '2015-08-11'
+    }
+])
+
+
+  
