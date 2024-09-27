@@ -22,16 +22,14 @@ const initDb = (callback) => {
     }
 
   // Add additional options to handle TLS/SSL issues to resolve render connection
-  const options = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    tls: true, // Force TLS/SSL connection
-    tlsInsecure: true, // Skip certificate validation for development (should be `false` in production)
-    connectTimeoutMS: 10000, // Add timeout to avoid hanging connections
-  };
+  //const options = {
+    //tls: true, // Force TLS/SSL connection
+    //tlsInsecure: true, // Skip certificate validation for development (should be `false` in production)
+    //connectTimeoutMS: 10000, // Add timeout to avoid hanging connections
+  //};
 
 
-    MongoClient.connect(connectionString, options)
+    MongoClient.connect(connectionString)
       .then((client) => {
         _db = client.db(); // Get the database instance
         console.log('Database connected successfully!');
