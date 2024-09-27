@@ -21,8 +21,17 @@ const initDb = (callback) => {
         return callback(new Error('MongoDB connection string is missing!'));
     }
 
+  // Add additional options to handle TLS/SSL issues to resolve render connection
+  const options = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    tls: true, // Force TLS/SSL connection
+    tlsInsecure: true, // Skip certificate validation for development (should be `false` in production)
+    connectTimeoutMS: 10000, // Add timeout to avoid hanging connections
+  };
 
-    MongoClient.connect(connectionString)
+
+    MongoClient.connect(connectionString, options)
       .then((client) => {
         _db = client.db(); // Get the database instance
         console.log('Database connected successfully!');
