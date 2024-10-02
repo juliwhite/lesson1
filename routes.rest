@@ -56,4 +56,31 @@ Content-Type: application/json
 ### DELETE a contact
 DELETE http://localhost:8080/contacts/66fc304107c8ce9404c0373d
 
-# POST Request on Render
+
+
+### POST Request on Render
+POST https://cse341-jw.onrender.com/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Eva",
+    "lastName": "Vergara",
+    "email": "evavergara@example.com",
+    "favoriteColor": "Blue",
+    "birthday": "1990-05-15"
+}
+
+### PUT Request on Render
+PUT https://cse341-jw.onrender.com/contacts/66fd7a44fdb106ca689c2385
+Content-Type: application/json
+
+{
+    "firstName": "Evangelina",
+    "lastName": "Vergara",
+    "email": "evavergara@example.com",
+    "favoriteColor": "Pink",
+    "birthday": "1990-05-15"
+}
+
+### DELETE on Render
+DELETE https://cse341-jw.onrender.com/contacts/66fd7a44fdb106ca689c2385
