@@ -9,3 +9,51 @@ GET http://localhost:8080/contacts/66f44da0372710822df3f63e
 
 ### GET third contact by ID
 GET http://localhost:8080/contacts/66f44da0372710822df3f63f
+
+
+
+
+### GET Production enviroment ALL CONTACTS
+GET https://cse341-jw.onrender.com/contacts
+
+### GET one contact
+GET https://cse341-jw.onrender.com/contacts/66f44da0372710822df3f63d
+
+### GET second contact
+GET https://cse341-jw.onrender.com/contacts/66f44da0372710822df3f63e
+
+### GET third contact
+GET https://cse341-jw.onrender.com/contacts/66f44da0372710822df3f63f
+
+
+
+
+
+### POST 
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Eva",
+    "lastName": "Vergara",
+    "email": "evavergara@example.com",
+    "favoriteColor": "Blue",
+    "birthday": "1990-05-15"
+}
+
+### UPDATE contact
+PUT http://localhost:8080/contacts/66fc304107c8ce9404c0373d
+Content-Type: application/json
+
+{
+    "firstName": "Evangelina",
+    "lastName": "Vergara",
+    "email": "evavergara@example.com",
+    "favoriteColor": "Pink",
+    "birthday": "1980-07-11"
+}
+
+### DELETE a contact
+DELETE http://localhost:8080/contacts/66fc304107c8ce9404c0373d
+
+# POST Request on Render
