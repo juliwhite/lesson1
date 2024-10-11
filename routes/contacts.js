@@ -35,4 +35,166 @@ router.put('/:id', [
 // Route to DELETE a contact by ID
 router.delete('/:id', contactsController.deleteContact);
 
+
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Contact:
+ *       type: object
+ *       required:
+ *         - firstName
+ *         - lastName
+ *         - email
+ *       properties:
+ *         firstName:
+ *           type: string
+ *         lastName:
+ *           type: string
+ *         email:
+ *           type: string
+ *         favoriteColor:
+ *           type: string
+ *         birthday:
+ *           type: string
+ */
+
+/**
+ * @swagger
+ * /contacts:
+ *   get:
+ *     summary: Get all contacts
+ *     responses:
+ *       200:
+ *         description: List of contacts
+ */
+router.get('/', contactsController.getAll);
+
+/**
+ * @swagger
+ * /contacts/{id}:
+ *   get:
+ *     summary: Get contact by ID
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: Contact ID
+ *     responses:
+ *       200:
+ *         description: Contact data
+ */
+router.get('/:id', contactsController.getSingle);
+
+/**
+ * @swagger
+ * /contacts:
+ *  post:
+ *     summary: Add a new contact
+ *     requestBody:
+ *      required: true
+ *      content: 
+ *          application/json:
+ *              schema:
+ *                  type: object
+ *                  properties:
+ *                    firstName: 
+ *                      type: string
+ *                      description: First name of the contact
+ *                      example: John
+ *                    lastName: 
+ *                      type: string
+ *                      description: last name of the contact
+ *                      example: Walls
+ *                    email:
+ *                      type: string
+ *                      description: Email of the contact
+ *                      example: johnwalls@example.com
+ *                    favoriteColor:
+ *                      type: string
+ *                      description: Favorite color of the contact
+ *                      example: blue
+ *                    birthday:
+ *                      type: string
+ *                      description: Birthay of the contact (YYYY-MM-DD)
+ *                      example: 2001-09-09
+ *     responses:
+ *       201:
+ *         description: Contact added succesfully
+ *       400:
+ *         description: Invalid request body
+ */
+router.post('/', contactsController.createContact);
+
+/**
+ * @swagger
+ * /contacts/{id}:
+ *   put:
+ *     summary: Update a contact by ID
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: Contact ID
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               firstName:
+ *                 type: string
+ *                 description: First name of the contact
+ *                 example: John
+ *               lastName:
+ *                 type: string
+ *                 description: Last name of the contact
+ *                 example: Walls
+ *               email:
+ *                 type: string
+ *                 description: Email of the contact
+ *                 example: johnwalls@example.com
+ *               favoriteColor:
+ *                 type: string
+ *                 description: favorite color of the contact
+ *                 example: green
+ *               birthday:
+ *                 type: string
+ *                 description: Birthday of the contact (YYYY-MM-DD)
+ *                 example: 2002-09-09
+ *     responses:
+ *       200:
+ *         description: Contact updated successfully
+ *       400:
+ *         description: Invalid request body
+ *       404:
+ *         description: Contact not found
+ */
+router.put('/:id', contactsController.updateContact);
+
+/**
+ * @swagger
+ * /contacts/{id}:
+ *   delete:
+ *     summary: Delete a contact by ID
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: Contact ID
+ *         schema:
+ *           type: string
+ *     responses:
+ *       204:
+ *         description: Contact deleted succesfully
+ *       404:
+ *         description: Contact no found
+ */
+router.delete('/:id', contactsController.deleteContact);
+
+
 module.exports = router;
